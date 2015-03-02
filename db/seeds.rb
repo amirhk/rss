@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'JSON'
+require 'open-uri'
+
+if ENV["RAILS_ENV"] != :production
+
+  @u1 = User.create! :name => "Amir1", :email => "amirhkarimi+1@gmail.com", :notify_usd_to_cad => true
+  @u2 = User.create! :name => "Amir2", :email => "amirhkarimi+2@gmail.com", :notify_usd_to_cad => false
+  @u3 = User.create! :name => "Amir3", :email => "amirhkarimi+3@gmail.com", :notify_usd_to_cad => true
+
+  rate = JSON.parse(open("http://rate-exchange.appspot.com/currency?from=USD&to=CAD").read)["rate"]
+
+  @rate1 = UsdtoCad.create! :USDtoCAD => rate, :CADtoUSD => 1 / rate
+
+end

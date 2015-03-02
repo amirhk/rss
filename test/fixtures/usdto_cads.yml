@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  USDtoCAD: 1.5
+  CADtoUSD: 1.5
+
+two:
+  USDtoCAD: 1.5
+  CADtoUSD: 1.5
