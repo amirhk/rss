@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20150302034458) do
     t.boolean  "notify_usd_to_cad"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.float    "notify_usd_to_eur"
-    t.float    "notify_usd_to_irr"
+    t.boolean  "notify_usd_to_eur"
+    t.boolean  "notify_usd_to_irr"
   end
 
 end

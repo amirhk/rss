@@ -2,7 +2,6 @@ class RssMailer < ApplicationMailer
   def test_email user
     # puts "#{user.inspect}"
     @user = user
-    puts @user.inspect
     @time_period = "hour"
     mail to: @user.email, subject: "Personlized #{@time_period.capitalize}ly RSS Feed."
   end

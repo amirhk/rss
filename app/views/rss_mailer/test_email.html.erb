@@ -1,2 +1,20 @@
 <p>Hey <%=@user.name%></p>
+
 Here's what's been happening in the past <%=@time_period%>...
+
+<br>
+
+<% if @user.notify_usd_to_cad %>
+  </br>
+  <strong>USD to CAD:</strong> <%=Rate.last.USDtoCAD%>
+<% end %>
+
+<% if @user.notify_usd_to_eur %>
+  </br>
+  <strong>USD to EUR:</strong> <%=Rate.last.USDtoEUR%>
+<% end %>
+
+<% if @user.notify_usd_to_irr %>
+  </br>
+  <strong>USD to IRR:</strong> <%=Rate.last.USDtoIRR%>
+<% end %>
