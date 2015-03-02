@@ -2,8 +2,10 @@
 
 one:
   USDtoCAD: 1.5
-  CADtoUSD: 1.5
+  USDtoEUR: 1.5
+  USDtoIRR: 1.5
 
 two:
   USDtoCAD: 1.5
-  CADtoUSD: 1.5
+  USDtoEUR: 1.5
+  USDtoIRR: 1.5
