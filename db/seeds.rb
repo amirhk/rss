@@ -9,6 +9,6 @@ if ENV["RAILS_ENV"] != :production
 
   rate = JSON.parse(open("http://rate-exchange.appspot.com/currency?from=USD&to=CAD").read)["rate"]
 
-  @rate1 = UsdtoCad.create! :USDtoCAD => rate, :CADtoUSD => 1 / rate
+  @rate1 = UsdtoCad.create! :USDtoCAD => rate
 
 end

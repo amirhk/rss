@@ -11,21 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302013857) do
+ActiveRecord::Schema.define(version: 20150302020548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "us_dto_cads", force: :cascade do |t|
-    t.float    "USDtoCAD"
-    t.float    "CADtoUSD"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "usdto_cads", force: :cascade do |t|
     t.float    "USDtoCAD"
-    t.float    "CADtoUSD"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
