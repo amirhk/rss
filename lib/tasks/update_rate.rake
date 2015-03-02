@@ -1,4 +1,4 @@
-require 'JSON'
+require 'json'
 require 'open-uri'
 
 namespace :ball do
