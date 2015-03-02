@@ -6,13 +6,13 @@ namespace :ball do
 
     rate = JSON.parse(open("http://rate-exchange.appspot.com/currency?from=USD&to=CAD").read)["rate"]
 
-    qu = Quote.new(:value => rate)
+    # qu = Quote.new(:value => rate)
 
-    if qu.save
+    # if qu.save
 
-      qu.email("amir@amir.amir")
+    #   qu.email("amir@amir.amir")
 
-    end
+    # end
 
     puts rate
 
