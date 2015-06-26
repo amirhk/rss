@@ -1,5 +1,5 @@
 Hey <%=@user.name%>
-Here's what's been happening in the past <%=@time_period%>...
+Here's what's been happening in the past little while <%=@time_period%>...
 
 <% if @user.notify_usd_to_cad %>
   USD to CAD: <%=Rate.last.USDtoCAD%>
