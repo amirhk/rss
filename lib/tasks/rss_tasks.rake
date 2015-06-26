@@ -10,11 +10,14 @@ namespace :rss_tasks do
   end
 
   task :update_rates => :environment do
-    rate_CAD = JSON.parse(open("http://rate-exchange.appspot.com/currency?from=USD&to=CAD").read)["rate"]
-    rate_EUR = JSON.parse(open("http://rate-exchange.appspot.com/currency?from=USD&to=EUR").read)["rate"]
-    rate_IRR = JSON.parse(open("http://rate-exchange.appspot.com/currency?from=USD&to=IRR").read)["rate"]
+    rates = JSON.parse(open("http://api.fixer.io/latest?base=USD").read)["rates"]
 
-    @rate = Rate.create! :USDtoCAD => rate_CAD, :USDtoEUR => rate_EUR, :USDtoIRR => rate_IRR
+    rate_CAD = rates["CAD"]
+    rate_EUR = rates["EUR"]
+    # rate_IRR = rates["IRR"]
+
+    # @rate = Rate.create! :USDtoCAD => rate_CAD, :USDtoEUR => rate_EUR, :USDtoIRR => rate_IRR
+    @rate = Rate.create! :USDtoCAD => rate_CAD, :USDtoEUR => rate_EUR
 
     if !@rate.save
       puts 'error saving..'
